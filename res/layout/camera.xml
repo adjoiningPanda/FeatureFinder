@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linear_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:screenOrientation="portrait" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/frameLayout1"
+            android:layout_width="180dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/zoom_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:contentDescription="@string/app_name" >
+            </ImageView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="172dp"
+            android:layout_height="240dp" >
+
+            <ImageView
+                android:id="@+id/binary_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/frameLayout3"
+            android:layout_width="160dp"
+            android:layout_height="240dp" >
+
+            <ImageView
+                android:id="@+id/contoured_image"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:contentDescription="@string/app_name" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:screenOrientation="portrait" >
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="captureHandler"
+                android:text="@string/start_camera"
+                android:textColor="@color/bright_blue" >
+            </Button>
+
+            <Button
+                android:id="@+id/addCalPoint"
+                android:layout_width="152dp"
+                android:layout_height="wrap_content"
+                android:onClick="incrementCounter"
+                android:text="@string/newCalPoint"
+                android:visibility="visible" >
+            </Button>
+
+            <TextView
+                android:id="@+id/calPointPlacement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/take_pic"
+                android:textColor="@color/bright_blue"
+                android:textSize="15sp" >
+            </TextView>
+
+            <Button
+                android:layout_width="152dp"
+                android:layout_height="wrap_content"
+                android:onClick="switchCameras"
+                android:text="Switch Camera"
+                android:visibility="visible" >
+            </Button>
+
+            <TextView
+                android:id="@+id/threshold_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/bright_blue"
+                android:textSize="15sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/facedetected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="false"
+                android:textColor="@color/bright_blue"
+                android:textSize="15sp" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="255" />
+
+</LinearLayout>
